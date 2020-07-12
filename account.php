@@ -13,14 +13,14 @@
 ?>
 <?php  include("inc/header.php");  ?>
 
-    </div>
+    <!-- </div> -->
 <div class="box-bg" style="background-color:#f7f7f7;">
 <div class="container" style="background-color:#f7f7f7;">
 <div class="row" style="background-color:#f7f7f7; height:80vh;">
 	<div class="col-md-3 side-bar-nav">
 		
 			<div class="white_bg" style="border:1px solid #ddd;">
-			<div class="public-box">
+			<div class="public-box" style="margin-top: 15rem">
 				
 					<img class="profile-pic img-circle sponsor_pic" src="<?php echo $_SESSION['profile_pic']; ?>">
 					
@@ -42,7 +42,7 @@
 			</div>
 		
 	</div>
-	<div class="col-md-9 classListEnrolled" style="background-color:#fff; border:1px solid #ddd;">
+	<div class="col-md-9 classListEnrolled" style="background-color:#fff; border:1px solid #ddd; margin-top: 7rem;margin-bottom: 10rem;">
 	
 	
 	<div class="row">
@@ -602,7 +602,8 @@
 	
 	
 	
-	
+<div style="margin-top: 50rem !important">
+</div>
 	
  
 <?php  include("inc/footer.php");  ?>
@@ -616,5 +617,4 @@
   ga('create', 'UA-92899523-1', 'auto');
   ga('send', 'pageview');
 
-</script>
-
+</script> 

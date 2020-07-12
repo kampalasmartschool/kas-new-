@@ -1,3 +1,15 @@
+<head>
+
+	
+	<link rel="stylesheet" href="css/owl.carousel.min.css"> 
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<!-- Main Stylesheets
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/main.css"> -->
+	
+</head>
 <?php
 session_start();
 	if(isset($_SESSION['user']) && !empty($_SESSION['user']) && isset($_SESSION['username']) && !empty($_SESSION['username'])&& isset($_SESSION['status']) && $_SESSION['status']==true && isset($_SESSION['account']) && $_SESSION['account']=='sponsor')
@@ -16,82 +28,214 @@ session_start();
 		//header("location:index.php");
 	}
 
-?>
+ include("inc/header.php"); 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Kampala Smart School</title>
-	<meta charset="UTF-8">		
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="We are an award winning innovative education platform that uses smart approaches to create impactful learning experiences and solutions for the young people that are growing up in the fast changing world.">
-	<meta name="keywords" content="kampalasmartschool, elerning, kampala, uganda, africa, education, smart school, kas, kass, onteq, mugarura, emmanuel, digital learning, website, platform, primary education ">
-	<meta name="author" content="Onteq, Nnyanzi Ian, Onen julius">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta name="google-site-verification" content="J04q1A2DBNBk2YQxZDLCA11e0TXo6LVLhja45wcuWCM" />
-	
-		<!-- face book seo -->
-	<meta property="og:url"                content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
-	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="Kampala Smart School" />
-	<meta property="og:description"        content="We are an award winning innovative education platform that uses smart approaches to create impactful learning experiences and solutions for the young people that are growing up in the fast changing world." />
-	<meta property="og:image"              content="./images/webAdd.jpg" />
+ ?>
 
-	<!-- Favicon -->
-	<link href="images/favicon.ico" rel="shortcut icon"/>
-
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-	<!-- Stylesheets -->
-	<!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
-
-   
-    <!-- font awesome 5 cdn -->
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/> 
-    <link rel="stylesheet" href="css/owl.carousel.min.css"> 
-    <link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-
-	<!-- Main Stylesheets -->
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-	<!-- Page Preloder -->
-	<!-- <div id="preloder">
-		<div class="loader"></div> 
- 	</div> -->
-
-	<!-- Header section -->
-	<header class="header-section clearfix">
-		<a href="index.php" class="site-logo">		
-			<img src="img/logo.png" class="logo" alt="website logo" width="70px" height="auto"	>
-		</a>
-
-		<div class="header-right">
-			<div class="user-panel">
-				<a data-target="#accountPop" data-toggle="modal" class="login acc"  style="cursor: pointer;">Login</a>
-				<a data-target="#accountPop" data-toggle="modal" class="register"  style="cursor: pointer;">Create an account</a>
-			</div> 
+<!--
+	<div style="top:-5px;"  class="">
+	<div class="carousel-inner" id="myCarousel">
+		<div class="item active ">
+			<div class='slideItem1'></div>
+			<div class="carousel-caption cpt">
+				<h3 class="animation animated-item-1 caption-heading">We are a child-centred digital learning platform offering lessons and
+resources aligned to the Uganda Primary School Curriculum.</h3>
+			</div>
 		</div>
-		<ul class="main-menu">
-			<li><a href="#online-learning">Online Learning</a></li>
-			<li><a href="#homeschooling">Homeschooling</a>
-				
-			</li>
-			<li><a href="#contact-section">Smart Tutor</a></li>
-			<li><a href="#ftco-appointment">Contact</a></li>
-		</ul>
-	</header>
-	<!-- Header section end -->
 
+		<div class="item">
+			<div class='slideItem2'></div>
+		<div class="carousel-caption cpt">
+				<h3 class="caption-heading">We are bringing learning alive in the classrooms. Our lessons and
+resources have been developed by the teachers for the teachers.</h3>		
+      </div>
+		</div>
+		<div class="item">
+			<div class='slideItem3'></div>
+		<div class="carousel-caption cpt">
+			<h3 class="caption-heading">Re-imagine what is possible for your child's education.
+No matter where your child is with their schoolwork – Kampala Smart
+School can help.</h3>			
+      </div>
+		</div>
+		<div class="item">
+			<div class='slideItem4'></div>
+		<div class="carousel-caption cpt">
+			<h3 class="caption-heading">Here at Kampala Smart School, we are excited to help your child
+learn. Our engaging lessons also ensure that your child will have fun
+in the process.</h3>
+      </div>
+		</div>
+		
+		<div class="item">
+			<div class='slideItem5'></div>
+		<div class="carousel-caption cpt">
+			<h3 class="caption-heading">1st runner-up of Uganda Communications Commission 2016 ACIA Award under Digital Content.  
+			<b>Kampala Smart School</b> improves your school & pupil’s grades with over 3000 lessons and activities across the subjects.</h3>
+      </div>
+		</div>
+
+		<div class="item">
+			<div class='slideItem6'></div>
+		<div class="carousel-caption cpt">
+			<h3 class="caption-heading">Kampala Smart School was the winner  
+			in the Uganda Registration Services Bureau, Intellectual Property 2017 Awards under the Education Category</h3>
+      </div>
+		</div>
+
+	</div>
+
+
+	
+</div>
+-->
+
+	<!-- <div style="top:-5px;" id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#myCarousel" data-slide-to="5"></li>
+		
+	</ol>
+
+	<div class="carousel-inner">
+		<div class="item active ">
+			<div class='slideItem1'></div>
+			<div class="carousel-caption cpt">
+				<br style="clear:both;">
+				<br style="clear:both;">
+				<h3 class="caption-heading">
+					We are...
+				</h3>
+				<p>an innovative education platform 
+					that uses smart approaches to create impactful
+					 learning experiences and solutions for the young 
+					 people that are growing up in the fast changing world.</p>
+				<div class="cc-controls">
+					<a data-toggle="modal" data-target="#accountPop" class="btn-lg-custom"href="#"><i class="fa fa-pencil"> </i> Register</a>
+					&nbsp;
+					&nbsp;
+					&nbsp;
+					<a class="tryDemo" href="#">Try our demo</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="item">
+			<div class='slideItem2'></div>
+		<div class="carousel-caption cpt">
+				<br style="clear:both;">
+				<br style="clear:both;">
+				<h3 class="caption-heading">Bringing learning alive...</h3>
+				<p>in the classrooms. Our lessons and resources have been developed by 
+					the teachers for the teachers.</p>	
+					<div class="cc-controls">
+						<a data-toggle="modal" data-target="#accountPop" class="btn-lg-custom"href="#">Get started</a>
+						&nbsp;
+					&nbsp;
+					&nbsp;
+						<a href="./pricing.php">See our pricing</a>
+					</div>	
+      </div>
+		</div>
+		<div class="item">
+			<div class='slideItem3'></div>
+		<div class="carousel-caption cpt">
+		<br style="clear:both;">
+				<br style="clear:both;">
+			<h3 class="caption-heading">Re-imagine...</h3>
+			<p>what is possible for your child's education.
+			<br>No matter where your child is with their schoolwork – Kampala Smart
+			School can help.</p>
+			<div class="cc-controls">
+						<a data-toggle="modal" data-target="#accountPop" class="btn-lg-custom"href="#">Sign in</a>
+						&nbsp;
+					&nbsp;
+					&nbsp;
+						<a data-toggle="modal" data-target="#accountPop" href="#">Register</a>
+					</div>			
+      </div>
+		</div>
+		<div class="item">
+			<div class='slideItem4'></div>
+		<div class="carousel-caption cpt">
+		<br style="clear:both;">
+				<br style="clear:both;">
+			<h3 class="caption-heading">We are excited...</h3>
+			<p>to help your child
+learn. <br> Our engaging lessons also ensure that your child will have fun
+in the process.</p>
+<div class="cc-controls">
+						<a data-toggle="modal" data-target="#downloadModal" class="btn-lg-custom"href="#">Download the app</a>
+						&nbsp;
+					&nbsp;
+					&nbsp;
+						<a data-toggle="modal" data-target="#sendMessageModal" href="#">Contact us</a>
+					</div>
+      </div>
+		</div>
+		
+		<div class="item">
+			<div class='slideItem5'></div>
+		<div class="carousel-caption cpt">
+		<br style="clear:both;">
+				<br style="clear:both;">
+			<h3 class="caption-heading">1st runner-up...</h3>
+			<p>in the Uganda Communications Commission 2016 ACIA Award under Digital Content.  
+			<b>Kampala Smart School</b> improves your school & pupil’s grades with over 
+			3000 lessons and activities across the subjects.</p>
+			<div class="cc-controls">
+						<a data-toggle="modal" data-target="#accountPop" class="btn-lg-custom"href="#">Register today</a>
+						&nbsp;
+					&nbsp;
+					&nbsp;
+						<a href="#testimonial">Testimonials</a>
+					</div>
+      </div>
+		</div>
+
+		<div class="item">
+			<div class='slideItem6'></div>
+		<div class="carousel-caption cpt">
+		<br style="clear:both;">
+				<br style="clear:both;">
+			<h3 class="caption-heading">Intellectual Property 2017 Awards winner</h3>
+			<p>Kampala Smart School was the winner  
+			in the Uganda Registration Services Bureau, Intellectual Property 
+			2017 Awards under the Education Category</p>
+			<div class="cc-controls">
+						<a class="btn-lg-custom" target="_blank" href="https://twitter.com/kampalasmartsch"><i class="fa fa-twitter"> </i> Follows us</a>
+						&nbsp;
+					&nbsp;
+					&nbsp;
+						<a href="./about.php">Read more about us</a>
+					</div>
+      </div>
+		</div>
+
+	</div>
+			<div>
+			
+			<!--
+			<span class="carousel-left-btn fa fa-chevron-left" aria-hidden="true" style="background-color:#e53e30; color:#fff; line-height:50px; text-align:center; border-radius:50%; width:50px; height:50px;" ></span>
+			-->
+<!--			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="z-index:995;">
+			<span class="fa fa-chevron-left" aria-hidden="true" style="position:absolute; left:20%; top:45%; background-color:#e53e30; color:#fff; line-height:50px; text-align:center; border-radius:50%; width:50px; height:50px;" ></span>
+			<span class="sr-only">Previous</span>
+			</a>
+
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="z-index:995;">
+			<span class="fa fa-chevron-right" aria-hidden="true" style="position:absolute; right:20%; top:45%; background-color:#e53e30; color:#fff; line-height:50px; text-align:center; border-radius:50%; width:50px; height:50px;" ></span>
+			<span class="sr-only">Next</span>
+			</a>
+		
+			</div>	
+</div>
+
+ -->
     <!-- slider -->
     <section class="home">
 		<div class="slider" >
@@ -192,19 +336,19 @@ session_start();
         <div class="row d-flex">
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch ">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body values py-md-4">
-                <h3>Innovation</h3>
-                <p>We imagine, create, devise and design.</p>
+                <h3> Innovation</h3>
+                <p> We imagine, create, devise and design.</p>
               </div>
             </div>      
           </div>
           
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-search-plus" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body  values  py-md-4">
@@ -215,18 +359,18 @@ session_start();
           </div>
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch ">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body values py-md-4">
-                <h3 class="hea-31  ">Grit</h3>
+                <h3 class="hea-31">Grit</h3>
                 <p class="p-31">We don’t quit.</p>
               </div>
             </div>      
           </div>
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-plus-square" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body py-md-4 values ">
@@ -238,7 +382,7 @@ session_start();
 
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-flask" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body py-md-4 values ">
@@ -249,12 +393,12 @@ session_start();
           </div>
           <div class="col-md-6 col-lg-4 d-flex align-self-stretch">
             <div class="media block-6 services d-block text-center">
-            	<div class="icon d-flex justify-content-center align-items-center">
+            	<div class="icon d-flex justify-content-center align-items-center mb-4">
 				<span><i class="fa fa-check" aria-hidden="true"></i></span>
 				</div>
               <div class="media-body py-md-4 values ">
                 <h3 class="hea-32">Accountability</h3>
-                <p class="p-32">We follow through on tasks.</p>
+                <p class="p-32 ml-5">We follow through on tasks.</p>
               </div>
             </div>      
           </div>
@@ -322,7 +466,7 @@ session_start();
 					<p>We design a customized homeschooling pathway for your child based on any of the four curricula with the aim of reigniting your child's 
 					passion for learning.
 </p>
-					<ul style="margin-left: 2rem">
+					<ul style="margin-left: 2rem; font-size: 16px !important">
 						<li>
 							The English National Curriculum
 						</li>
@@ -417,7 +561,7 @@ session_start();
               <p class="text-center">
                 <h2 class="text-center">BOOK A SMART TUTOR </h2>
               </p>
-			  <span> 
+			  <span style="font-size: 14px !important"> 
 			  An experienced tutor is just a click away. Register here to get matched to one.
 			  </span>
 			  <!-- <br/> -->
@@ -426,34 +570,34 @@ session_start();
             <form action="book_tutor.php" method="POST">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input name="class" required type="text" class="form-control" placeholder="Class">
+                  <input name="class" required type="text" class="form-control form-control-lg" placeholder="Class">
                 </div>
                 <div class="col-md-6">
-                  <input name="curri" type="text" required  class="form-control" placeholder="Curriculum">
+                  <input name="curri" type="text" required  class="form-control form-control-lg" placeholder="Curriculum">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input name="email" type="email" required class="form-control" placeholder="Email address">
+                  <input name="email" type="email" required class="form-control form-control-lg" placeholder="Email address">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input name="name" type="text" required class="form-control" placeholder="Your Name">
+                  <input name="name" type="text" required class="form-control form-control-lg" placeholder="Your Name">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input name="loc" type="text" required class="form-control" placeholder="Location...">
+                  <input name="loc" type="text" required class="form-control form-control-lg" placeholder="Location...">
                 </div>
               </div>
 			  
 			  <div class="form-group row">
                 <div class="col-md-12">
-                  <input name="phone" type="number" required class="form-control" placeholder="Phone Number">
+                  <input name="phone" type="number" required class="form-control form-control-lg" placeholder="Phone Number">
                 </div>
               </div>
 			  
@@ -470,7 +614,7 @@ session_start();
 		    <p class="text-center">
                 <h2 class="text-center">BECOME A SMART TUTOR</h2>
             </p>
-			<span> 
+			<span style="font-size: 14px"> 
 			  Teach your favourite subject. Register here.
 			</span>
 			<br><br>
@@ -479,34 +623,34 @@ session_start();
             <form action="be_tutor.php" method="post">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input name="qualifi" required type="text" class="form-control" placeholder="Qualification">
+                  <input name="qualifi" required type="text" class="form-control form-control-lg" placeholder="Qualification">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" name="subject" required class="form-control" placeholder="Subject">
+                  <input type="text" name="subject" required class="form-control form-control-lg" placeholder="Subject">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="email" class="form-control" name="email" required placeholder="Email address">
+                  <input type="email" class="form-control form-control-lg" name="email" required placeholder="Email address">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                  <input type="text" class="form-control form-control-lg" placeholder="Your Name " name="name" required>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Location..." name="loc" required>
+                  <input type="text" class="form-control form-control-lg" placeholder="Location..." name="loc" required>
                 </div>
               </div>
 			  
 			  <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="number" class="form-control" placeholder="Phone Number" required name="phone">
+                  <input type="number" class="form-control form-control-lg" placeholder="Phone Number" required name="phone">
                 </div>
               </div>
 			  
@@ -552,7 +696,7 @@ session_start();
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+								<input type="submit" value="Send message" class="btn btn-primary py-3 px-4" style="font-size: 14px">
 							</div>
 						</div>
     					</div>
@@ -562,72 +706,13 @@ session_start();
     	</div>
     </section>	
 
-	<!-- Footer section -->
-	<footer class="footer-section" id="footer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-6 col-lg-7 order-lg-2">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="footer-widget">
-								<h2>Address</h2>
-								<ul>
-									<li><a href="">Plot 5 Katego Road, Opposite Daks Toyota, Kamwokya.</a></li>
-									<li><a href="">Education Lab</a></li>
-
-								</ul>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="footer-widget">
-								<h2>Legal</h2>
-								<ul>
-									<li><a class="privacy-sec" href="terms_of_use.php"> Terms and Conditions </a></li>
-									<li><a class="privacy-sec" href="privacy_policy.php"> Privacy Statement </a></li>
-
-								</ul>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="footer-widget">
-								<h2>Contact us</h2>
-								<ul>
-									<li><a href="">Call or Whatsapp: 0776182222</a></li>
-									<li><a href="">Email: kampalasmartschool@gmail.com</a></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-5 order-lg-1">
-					<img src="img/logo.png" alt="" width="100px" height="100px"	>
-					<div class="copyright text-white">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-                        <br/>                      
-                        
-                        
-					</div>
-					<div class="social-links">						
-                        <a href="https://www.facebook.com/kampalasmartsch/"><i class="fa fa-facebook-f"></i></a>
-                        
-						<a href="https://twitter.com/kampalasmartsch"><i class="fa fa-twitter"></i></a>
-						<a href="https://www.youtube.com/channel/UCtKy_9I1zkxT5SoVrkEecTA?"><i class="fa fa-youtube"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
-	
+	<!--  -->
 
 
 	<!-- Bootstrap => JS, Popper.js, and jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>    
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
+	<!-- <script src="js/jquery.slicknav.min.js"></script> -->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
@@ -636,8 +721,141 @@ session_start();
 	<script src="js/script.js"></script>
 	<script async="" src="https://drv.tw/inc/wd.js"></script>
 	
-	<?php require("inc/modal.php")	?>
-	<?php  if (isset($_GET['action'])){ ?>
+	<?php //require("inc/modal.php")	?>
+	
+
+<!-- <div id="testimonial" class="jumbotron feedBack">
+	<div class="container">
+	<h3 class="animation animated-item-1 text-center">What our amazing students say about us.</h3>
+		<br>
+
+		</div>
+		<div class="container feeDInner" style="background-color:#fff;">
+		
+		<div class="profile">
+			<img src="images/AbigailMukisa.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“Before I started using Kampala Smart School I was never sure about the answer and I would sometimes be guessing when 
+			I answered the question. After using the programme … 
+			Science is now my favourite subject.”  </p>
+			<p class="text-center"><strong>Abigail Mukisa,</strong><br><small>Learner.</small></p>
+			</div>
+		</div>
+				<div class="profile">
+			<img src="images/EstherAtuhaise.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“I have improved over the past year in both my Mathematics and English. 
+			I am finding everything so much easier. Having tutorials has made the difference! 
+			Tests are no longer a problem and my homework is a breeze. Thanks Kampala Smart School” </p>
+			<p class="text-center"><strong>Esther Atuhaise,</strong><br><small>Learner.</small></p>
+			</div>
+		</div>
+		
+			<div class="profile">
+			<img src="images/DeshinKumar.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“My mum made me do a lesson a day. I now feel really great when I am doing my Mathematics because over the holidays I was able to revise my work and catch up” </p>
+			<p class="text-center"><strong>Dishin Kumar,</strong><br><small>Learner.</small></p>
+			</div>
+		</div>
+		<div class="profile">
+			<img src="images/LouisAcon.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“My Mathematics has improved a lot and I’m now in the top group in my class. 
+			Kampala Smart School has made it easy for me to study at home and it really helps me in the class at school.” </p>
+			<p class="text-center"><strong>Louis Acon</strong><br><small>Learner.</small></p>
+			</div>
+		</div>
+		
+		<div class="profile">
+			<img src="images/AsiimweNathan.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“Kampala Smart School  has really made a difference for me at school. 
+			Before we started on the programme, I never wanted to be picked by the teacher to answer a question,
+			so I would always be looking down when the teacher asked a question. Now it is different!"</p>
+			<p class="text-center"><strong>Nathan Asiimwe</strong><br><small>Learner.</small></p>
+			</div>
+		</div>
+	
+		<div class="profile">
+			<img src="images/ChristenNatasha.png" class="img-responsive  img-circle">
+			
+			<div class="sayings">
+			<p class="text-center">“I am new to Kampala Smart School. My sister and I have only been on the programme for about 5 months and [now] I really do understand what the teacher is saying.”  </p>
+			<p class="text-center"><strong>Christen Natasha</strong><br><small>Learner.</small></p>
+
+			</div>
+		</div>
+		</div>
+	</div> -->
+
+	<!-- <div class="blueBox doodle_bg">
+	<br>
+	<div class="container">
+		<h3 class='animation animated-item-1 text-center'>Get started as a Parent and register your child to learn now</h3>
+		<br>
+	
+	<div class="accBox">
+		<div class="animation animated-item-1 loginBox">
+			<p class="text-center"><strong>Do you have an account with us ?</strong></p>
+			<br>
+			<div class='button-center'>
+			<button class="btn btn-danger" data-target="#accountPop" data-toggle="modal"><strong>Get started</strong></button>
+			</div>
+		</div>
+		<div class="animation animated-item-1 loginBox">
+			<p class="text-center"><strong>Do you have any questions ?</strong></p>
+			<br>
+			<div class='button-center'>
+			<button class="btn btn-danger" data-target="#sendMessageModal" data-toggle="modal"><strong>Contact us</strong></button>
+			</div>
+		</div>
+	</div>
+	</div>
+<br>
+</div > -->
+
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92899523-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+</script> -->
+<?php  include("inc/footer.php"); ?>
+<script>
+  $( function(){
+	var app = new initHome();
+	app.slider('.feeDInner');
+  })
+  function initHome(){
+	  this.slider = function(slidElement){
+		$(slidElement).slick({
+			dots: true,
+			infinite: true,
+			autoplay:true,
+			fade: true,
+			arrows: false,
+			cssEase: 'linear',
+			autoplaySpeed: 9000,
+			adaptiveHeight:true,
+			responsive:true
+		});
+	  }
+  }
+
+</script>
+<?php  if (isset($_GET['action'])){ ?>
 	<script>
 		$( function(){
 			$('#accountPop').modal('show');
@@ -648,5 +866,3 @@ session_start();
 	?>
 
 
-</body>
-</html>

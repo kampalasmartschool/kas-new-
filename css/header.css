@@ -1,0 +1,40 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	width: 100% !important;
+	font-family: "Montserrat", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	/* font-smoothing: antialiased; */
+	padding-right: 0 !important;
+	margin-right: 0 !important;
+	
+}
+/* .register:hover{
+    background-color: #000 !important;
+    color: #fff !important
+
+} */
+
+.acc{
+	background-color: #bb2e24;
+	border-radius: 1rem !important;
+	padding: 1rem !important;
+	border-bottom-color: none !important;
+	
+	/* border: 1px solid #bb2e24 !important; */
+}
+
+.logoutSponsor:hover{
+	background: none !important;
+	padding: 1rem;
+}
+/* .acc:hover{ 
+	 background-color: #fff !important;
+	color: #bb2e24 !important;
+	/* border: 1px solid #bb2e24 !important; 
+} */

@@ -15,7 +15,7 @@
 
 <body>
 <?php
-require("api/config.php");
+// require("api/config.php");
 
 
 // echo "working";
@@ -56,33 +56,56 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
 
     //  db connection
 
-    $conn = connect_db();
+    // $conn = connect_db();
     // if($db){
     //     echo "connection has been done";
     // }
-    $stmt = $conn->prepare("INSERT INTO `be_tutor`(`quali`, `subject`, `email`, `name`, `loc`, `phone`) VALUES (?,?,?,?,?,?)");
-    $stmt->bind_param("ssssss", $u_qualifi, $u_subject, $u_email, $u_name, $u_loc , $u_phone);
+    // $stmt = $conn->prepare("INSERT INTO `be_tutor`(`quali`, `subject`, `email`, `name`, `loc`, `phone`) VALUES (?,?,?,?,?,?)");
+    // $stmt->bind_param("ssssss", $u_qualifi, $u_subject, $u_email, $u_name, $u_loc , $u_phone);
 
     // set parameters and execute
-    $u_qualifi = $qualifi;
-    $u_subject = $subject;
-    $u_email = $email;
-    $u_name = $name;
-    $u_loc = $loc;
-    $u_phone = $phone;
+    // $u_qualifi = $qualifi;
+    // $u_subject = $subject;
+    // $u_email = $email;
+    // $u_name = $name;
+    // $u_loc = $loc;
+    // $u_phone = $phone;
 
-    $stmt->execute();
+    // $stmt->execute();
+    $to='kampalasmartschool@gmail.com,admin@kampalasmartschool.com';
+    
 
-    echo '<div class="alert alert-success" role="alert" > Thank you for applying, we will contact you shortly. </div>';
+		/*initialize the message that is to be sent to the specified email above*/
+        $message = "<h2> Tutor Request </h2>";
+        $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
+        $message .= "<p> qualification: " . $qualifi . "</p><p>Subject: ". $subject . "</p><p>Location: ". $loc . "</p></h4>";
 
-    $stmt->close();
-    $conn->close();
+        $subject="Request from a Tutor for Kampala Smart School";
+		/*set up the email headers*/
+		$headers = '';
+		$headers .= 'From: ' . $name." ".$email."\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+		
+		/*send the message and check if its been sent and respond accordingly*/
+		if (mail($to, $subject, $message, $headers)){
+        echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+        } 
+        else{
+        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+        }
+		
+
+    // echo '<div class="alert alert-success" role="alert" > Thank you for applying, we will contact you shortly. </div>';
+
+    // $stmt->close();
+    // $conn->close();
     
 // }
 }
 ?>
 
-<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>
+
 
 </body>
 </html>

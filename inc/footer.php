@@ -1,4 +1,7 @@
-<div class="footer">
+<head>	
+	<link rel="stylesheet" href="css/footer.css"/>
+</head>
+<!-- <div class="footer">
 <br>
 <br>
 <br>
@@ -34,7 +37,7 @@
 				<li>
 					<a href="terms_of_use.php">Terms of Use</a>
 				</li>
-				<!-- <li><a href="disclaimer.php">Disclaimer</a></li> -->
+				<!-- <li><a href="disclaimer.php">Disclaimer</a></li> 
 			</ul>
 		</div>
 
@@ -61,8 +64,8 @@
 </div>
 
 <br>
-<br>
-<div class="address-location">
+<br> -->
+<!-- <div class="address-location">
 	<div class="container">
 	<div class="row">
 	<div class="col-md-12"><h3 class="page-header text-center">Find us at</h3></div>
@@ -71,7 +74,7 @@
 	<div class="col-md-3">
 		
 	 <p style="font-size:25px;"><i class="fa fa-map-marker"></i> Plot 5 Katego Road, Opposite Daks Toyota, Kamwokya <br/> 
-	 <!-- <small><i class="fa fa-angle-right"> </i> Fourth Floor, <br/><i class="fa fa-angle-right"> </i> Room SH065 | HSM 035</small> -->
+	  <small><i class="fa fa-angle-right"> </i> Fourth Floor, <br/><i class="fa fa-angle-right"> </i> Room SH065 | HSM 035</small> 
 		</p>
 	</div>
 	<div class="col-md-9">
@@ -80,8 +83,8 @@
 	</div>
 	
 	</div>
-</div>
-<br>
+</div> -->
+<!-- <br>
 <br>
 <br>
 <div class='bottom-f'>
@@ -100,14 +103,81 @@
 			<div class='col-md-4'>
 
 				<p>&copy;
-					<?php echo date('Y'); ?> . Kampala Smart School.
+					<?php //echo date('Y'); ?> . Kampala Smart School.
 				</p>
 			</div>
 		</div>
 	</div>
 </div>
-</div>
-<!-- Class Preview -->
+</div> -->
+
+<!-- Footer section -->
+<footer class="footer-section" id="footer-section">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-7 order-lg-2">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2>Address</h2>
+								<ul>
+									<li><a href="">Plot 5 Katego Road, Opposite Daks Toyota, Kamwokya.</a></li>
+									<li><a href="">Education Lab</a></li>
+
+								</ul>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2>Legal</h2>
+								<ul>
+									<li><a class="privacy-sec" href="terms_of_use.php"> Terms and Conditions </a></li>
+									<li><a class="privacy-sec" href="privacy_policy.php"> Privacy Statement </a></li>
+
+								</ul>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2>Contact us</h2>
+								<ul>
+									<li><a href="">Call or Whatsapp: 0776182222</a></li>
+									<li><a href="">Email: kampalasmartschool@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-5 order-lg-1">
+					<img src="img/logo.png" alt="" width="100px" height="100px"	>
+					<div class="copyright text-white">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                        <br/>                      
+                        
+                        
+					</div>
+					<div class="social-links">						
+                        <a href="https://www.facebook.com/kampalasmartsch/"><i class="fa fa-facebook-f"></i></a>
+                        
+						<a href="https://twitter.com/kampalasmartsch"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.youtube.com/channel/UCtKy_9I1zkxT5SoVrkEecTA?"><i class="fa fa-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+	
+
+
+
+
+	<!-- Class Preview -->
+
 <div class="modal fade" id="classPreview" role="dialog">
 <div class="modal-dialog" style="width:87%;">
 	<div class="modal-content">
@@ -124,7 +194,7 @@
 					<p>Enrolled</p>
 					
 					</div>
-					<button data-toggle="modal" data-target="#accountPop" class="pull-right btn btn-custom-primary">Go to Class</button>
+					<button data-toggle="modal" data-target="#accountPop" class="pull-right btn btn-primary">Go to Class</button>
 				</div>
 			</div>
 			<br>
@@ -204,7 +274,7 @@
 <!-- Login and Sign up page <div class="" id="accountPop" role="dialog">-->
 <div class="modal fade" id="accountPop" role="dialog">
 
-<div class="modal-dialog" style="width:50%;">
+<div class="modal-dialog" style="width:80%; height: 100% !important">
 	<div class="modal-content">
 		<div class="modal-header">
 			<div class="pull-left" style="width:80%;">
@@ -221,36 +291,36 @@
 		</div>
 		<div class="modal-body">
 
-			<div class="row">
-				<div class="col-md-3">
+			 <!-- <div class="row"> -->
+				<!-- <div class="col-md-3">
 
-				</div>
-				<div class="col-md-6 loginPanel">
+				</div> -->
+				<div class="loginPanel"> 
 
 					<form class="login_sponsor">
 						<h4>Login</h4>
 						<hr>
-						<div class="form-group">
-							<select class="loginType form-control">
+						<div class="form-group" >
+							<select class="loginType form-control" style="font-size: 1.5rem !important;">
 								<option value="0">Login as:</option>
 								<option value="1">Student</option>
 								<option value="2">Parent/ School</option>
 
 							</select>
 						</div>
-						<div class="form-group">
-							<input type="text" name="username" class="username form-control" placeholder="Username Or Email">
+						<div class="form-group" >
+							<input type="text" name="username" class="username form-control" placeholder="Username Or Email" style="font-size: 1.5rem !important;">
 						</div>
 						<div class="form-group">
-							<input type="password" name="password" class="password form-control" placeholder="Password">
-						</div>
-
-						<div class="form-group">
-							<a class='text-danger' href='recoverAccount.php'>Did you forget your password?</a>
+							<input type="password" name="password" class="password form-control" placeholder="Password" style="font-size: 1.5rem !important;">
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class='btn btn-custom-danger'>Login</button>
+							<a class='text-danger' href='recoverAccount.php' style="font-size: 1.5rem !important;">Did you forget your password?</a>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class='btn btn-danger' >Login</button>
 						</div>
 						<br>
 						<br>
@@ -261,27 +331,27 @@
 					</form>
 					<div class="form-group">
 						<button class='tryDemo btn btn-default'>Try Our Demo</button>
-						<button class='goToRegister btn btn-custom-primary'>Register</button>
+						<button class='goToRegister btn btn-primary' >Register</button>
 					</div>
 				</div>
 
+				<!-- <div class="col-md-3">
+
+				</div> -->
+			</div> 
+
+
+			<!-- <div class="row">
 				<div class="col-md-3">
 
-				</div>
-			</div>
+				</div> -->
+				<div class="hiddenElement registerPanel">
 
-
-			<div class="row">
-				<div class="col-md-3">
-
-				</div>
-				<div class="col-md-6 hiddenElement registerPanel" style="">
-
-					<form class="registerParent" id="registerParent">
+					<form class="registerParent" id="registerParent" style="padding: 0 1rem !important">
 						<h4>Register</h4>
 						<hr>
 						<div class="form-group">
-							<select name="type" class="type form-control">
+							<select name="type" class="type form-control" style="font-size: 1.5rem !important;">
 								<option value="x">Please Select Sponsor Type</option>
 								<option value="0">Parent</option>
 								<option value="1">School</option>
@@ -290,31 +360,31 @@
 						</div>
 
 						<div class="form-group">
-							<input type="text" name="sponsor_name" class="f_name form-control" placeholder="Full Names">
+							<input type="text" name="sponsor_name" class="f_name form-control" placeholder="Full Names" style="font-size: 1.5rem !important;">
 						</div>
 
 
 						<div class="form-group">
-							<input type="text" name="country" class="country form-control" placeholder="Country">
+							<input type="text" name="country" class="country form-control" placeholder="Country" style="font-size: 1.5rem !important;">
 						</div>
 
 						<div class="row">
 							<div class="col-md-6 form-group">
-								<input type="email" name="email" class="email form-control" placeholder="Email">
+								<input type="email" name="email" class="email form-control" placeholder="Email" style="font-size: 1.5rem !important;">
 							</div>
 							<div class="col-md-6 form-group">
-								<input type="text" name="phone" class="phone form-control" placeholder="Phone Number">
+								<input type="text" name="phone" class="phone form-control" placeholder="Phone Number" style="font-size: 1.5rem !important;">
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="file" id="" name="profile_pic" class="profile_pic form-control">
+							<input type="file" id="" name="profile_pic" class="profile_pic form-control" style="font-size: 1.5rem !important;">
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-group">
-								<input type="password" name="password1" class="password1 form-control" placeholder="Password">
+								<input type="password" name="password1" class="password1 form-control" placeholder="Password" style="font-size: 1.5rem !important;">
 							</div>
 							<div class="col-md-6 form-group">
-								<input type="password" name="password2" class="password form-control" placeholder="Confirm Password">
+								<input type="password" name="password2" class="password form-control" placeholder="Confirm Password" style="font-size: 1.5rem !important;">
 							</div>
 						</div>
 						<p>By registering, providing personal information and use of Kampala Smart School signifies acceptance
@@ -327,23 +397,23 @@
 							</u>.
 						</p>
 						<div class="form-group">
-							<button class='btn btn-custom-primary'> Register </button>
+							<button class='btn btn-primary' style="background-color: #00f !important; color: #fff !important;">Register</button>
 						</div>
 
 					</form>
+					<!-- <br>
+					<br> -->
 					<br>
-					<br>
-					<br>
-					<h5>You already have an Account ?</h5>
+					<h5 style="padding: 0 1rem !important">You already have an Account ?</h5>
 					<hr>
-					<div class="form-group">
+					<div class="form-group" style="padding: 0 1rem !important">
 						<p>Please Login here</p>
-						<button class='goTologin btn btn-custom-danger'>Login</button>
+						<button class='goTologin btn btn-danger'>Login</button>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<!-- <div class="col-md-3">
 
-				</div>
+				</div> -->
 
 			</div>
 		</div>
@@ -667,7 +737,7 @@
 							</u>.
 						</p>
 						<div class="form-group">
-							<button type="submit" class='btn btn-custom-primary'>Register</button>
+							<button type="submit" class='btn btn-primary'>Register</button>
 						</div>
 						
 
@@ -758,13 +828,3 @@ $(document).ready(function () {
 
 });
 </script>
-
-
-<div class="loader">
-
-</div>
-<!-- loader -->
-
-</body>
-
-</html>

@@ -1,24 +1,6 @@
-*, *::before, *::after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.logoutSponsor{
+	display: none;
 }
-html,
-body {
-	height: 100%;
-	width: 100% !important;
-	font-family: "Montserrat", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	/* font-smoothing: antialiased; */
-	padding-right: 0 !important;
-	margin-right: 0 !important;
-	
-}
-/* .register:hover{
-    background-color: #000 !important;
-    color: #fff !important
-
-} */
 h1,
 h2,
 h3,
@@ -87,7 +69,6 @@ ol {
 	padding: 0;
 	margin: 0;
 }
-
 /* 
 carousel section 
  */
@@ -155,11 +136,15 @@ Commom elements
 	line-height: normal !important;
 	cursor: pointer !important;
 	text-align: center !important;
+	text-decoration: none !important;
 		
 }
 
 .site-btn:hover {
-	color: #fff;
+	color: #bb2e24 !important;
+	text-decoration: none !important;
+	background-color: #fff !important;
+	border: 1px solid #bb2e24 !important;
 }
 
 .site-btn.sb-c2 {
@@ -234,7 +219,7 @@ Commom elements
 Header section
  ---------------------*/
 
-.header-section {
+/* .header-section {
 	padding-left: 5px;
 	padding-right: 72px;
 	background: #0575e6;
@@ -244,13 +229,13 @@ Header section
 	z-index: 5 !important;
 	width: 100% !important;	
 	
-}
-
+} */
+/* 
 .site-logo {
 	display: inline-block;
 	padding: 0;
 	padding: 1rem 15px;
-}
+} */
 
 .header-right {
 	float: right;
@@ -301,7 +286,7 @@ Header section
 	padding-left: 9px;
 }
 
-.main-menu {
+/* .main-menu {
 	list-style: none;
 	float: right;
 }
@@ -369,9 +354,9 @@ Header section
 
 .main-menu .sub-menu li a:hover {
 	color: #bb2e24;
-}
+} */
 
-.slicknav_menu {
+.slick_menu {
 	display: none;
 }
 
@@ -636,51 +621,6 @@ Premium section
 	margin-bottom: 0;
 }
 
-/* ----------------
-Responsive
- -------------------*/
-
-.footer-section {
-	background: #000080;
-	padding: 100px 0 85px;
-}
-
-.footer-widget {
-	padding-top: 2px;
-}
-
-.footer-widget h2 {
-	font-size: 16px;
-	color: #fff;
-	text-transform: uppercase;
-	margin-bottom: 30px;
-}
-
-.footer-widget ul {
-	list-style: none;
-}
-
-.footer-widget ul li a {
-	display: inline-block;
-	color: #fff;
-	font-size: 14px;
-	margin-bottom: 10px;
-}
-
-.copyright {
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: 500;
-	color: #505565;
-	padding: 10px 0 25px;
-}
-
-.social-links a {
-	display: inline-block;
-	color: #fff;
-	font-size: 18px;
-	margin-right: 35px;
-}
 
 /* ----------------
 Other pages
@@ -1431,30 +1371,30 @@ Responsive
 		margin-left: 50px;
 	}
 	.main-menu li a {
-		margin-left: 25px;
+		/* margin-left: 25px; */
 	}
 	.main-menu .sub-menu {
-		left: 25px;
+		/* left: 25px; */
 	}
 }
 
 /* Medium screen : 992px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-	.header-section {
+	/* .header-section {
 		padding-left: 15px;
         padding-right: 20px;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-	}
+	} */
 	.header-right {
 		margin-left: 20px;
 	}
 	.main-menu li a {
-		margin-left: 15px;
+		/* margin-left: 15px; */
 	}
 	.main-menu .sub-menu {
-		left: 15px;
+		/* left: 15px; */
 	}
 	.hr-img img {
 		min-width: 500px;
@@ -1568,9 +1508,7 @@ Responsive
 	.sub-text {
 		margin-bottom: 50px;
 	}
-	.footer-widget {
-		margin-bottom: 40px;
-	}
+	
 	.category-section .section-title,
 	.playlist-section .section-title {
 		float: none;
@@ -1709,9 +1647,7 @@ Responsive
 	.sub-text {
 		margin-bottom: 50px;
 	}
-	.footer-widget {
-		margin-bottom: 40px;
-	}
+	
 	.category-section .section-title,
 	.playlist-section .section-title {
 		float: none;
@@ -1779,7 +1715,7 @@ Responsive
 		max-width: 100%;
 	}
 	.header-section {
-		padding: 0 15px;
+		/* padding: 0 15px; */
 	}
 	.category-item {
 		margin: 0 0 30px;
@@ -1814,7 +1750,7 @@ Responsive
 		font-size: 24px;
 	}
 	.header-section {
-		padding: 0;
+		/* padding: 0; */
 	}
 	.player-box {
 		padding: 40px;
@@ -2084,10 +2020,10 @@ Our Values
 Awards
  */
 .site-section {
-  padding: 7rem 0; }
+  padding: 7rem 0 !important; }
   @media (max-width: 991.98px) {
     .site-section {
-      padding: 3rem 0; } }
+      padding: 3rem 0 !important; } }
 	  
 .block-13 .owl-nav {
   display: none; }

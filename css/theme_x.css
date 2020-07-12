@@ -44,13 +44,43 @@ h6 {
 }
 
 .customHeader {
-	background-color: #c33529;
-	border-bottom: 10px solid #e53e30;
+	background-color: #0575e6;
+	/* border-bottom: 10px solid #e53e30; */
 	color: #fff;
 	margin-bottom: 0px;
-	max-height: 53px !important;
+	/* max-height: 53px !important; */
+	padding: 2rem !important;
+    /* position: fixed;
+    left: 0 !important;
+	top: 0 !important; */
+	/* z-index: 5 !important; */
+    width: 100% !important;
+    /* padding-bottom: 7rem !important;	 */
+}
+#navLinks{
+	margin-left: 10rem !important;
 }
 
+/* .navbar-header{
+	
+} */
+
+@media screen and (max-width: 527px){
+	.customHeader,.navbar-con{
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.navbar-header{
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		width: 100% !important;
+	}
+	
+	#navLinks{
+		margin-left: 0 !important;
+	}
+
+}
 .bg_image {
 	background-color: #d2d2d2;
 	background-image: url('../images/doodleNext.png');
@@ -71,7 +101,7 @@ h6 {
 }
 
 .navbar-brand img {
-	border-radius: 15px;
+	/* border-radius: 15px; */
 }
 
 .customHeader ul li {
@@ -88,6 +118,7 @@ h6 {
 
 .customHeader ul li:hover {
 	background-color: #e53e30;
+	border-radius: 1rem !important;
 }
 
 .important_btn {
@@ -220,7 +251,8 @@ h6 {
 	top: 5px;
 	right: 40%;
 	left: 40%;
-	z-index: 999;
+	z-index: 5000;
+	width: 20% !important;
 }
 
 .hiddenElement {
@@ -608,6 +640,7 @@ a.right {
 	padding: 10px 10px 30px 10px;
 	width: 100%;
 	border-bottom: 2px solid #f7f7f7;
+	margin-top: 20rem;
 }
 
 .public-box .profile-pic {
@@ -669,6 +702,7 @@ a.right {
 	background-color: #fff;
 	overflow: auto;
 	padding: 10px;
+	
 }
 
 .childTab h4 {
@@ -677,7 +711,7 @@ a.right {
 
 .childTab table {
 	background-color: #fff;
-	margin-top: 10px;
+	margin-top: 10rem !important;
 }
 
 .btn-light {

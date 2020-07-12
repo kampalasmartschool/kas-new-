@@ -6,7 +6,7 @@
 
 			$('.loader').hide();
 			$('.loginMenu').slideToggle();
-			logout();
+			// logout();
 		});
 
 		getAllClasses();
@@ -89,8 +89,9 @@
 
 	var color = ["244,67,54,0.5", "156,39,176,0.5", "63,81,181,0.5", "0,150,136,0.5", "139,195,74,0.5", "255,235,59,0.5", "255,152,0,0.5"];
 
-	function logout() {
+	// function logout() {
 		$('a.logoutSponsor').click(function () {
+			// alert("working");
 			notify("Logging out....", "success");
 			var logoutSettings = {
 				"method": "GET",
@@ -106,7 +107,7 @@
 			});
 
 		});
-	}
+	// }
 
 	function inAsStudent() {
 		$('a.contAsStudent').click(function () {
