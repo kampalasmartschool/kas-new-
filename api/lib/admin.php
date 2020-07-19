@@ -199,16 +199,16 @@ function logout()
 		}else{
 			$_SESSION=array();
 			$_SESSION['destroyed']=true;
-			session_destroy();
 			session_regenerate_id();
+			session_destroy();
 			echo json_encode(array('status'=>'success','message'=>'logout Successful'));
 		}
 	}
 	else{
 		$_SESSION=array();
 		$_SESSION['destroyed']=true;
-		session_destroy();
 		session_regenerate_id();
+		session_destroy();
 		echo json_encode(array('status'=>'failed','message'=>'Logout successful'));
 	}
 	
