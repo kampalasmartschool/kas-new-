@@ -128,7 +128,7 @@
 			
 			<br style="clear:left;">
 			
-	<a style="" id="promptAddStudent" data-toggle="modal" data-target="#addChildModal" href="#addChild" class="addChild pull-right btn btn-sm btn-primary">Add Student</a>
+	<button id="promptAddStudent" data-toggle="modal" data-target="#addChildModal" class=" pull-right btn btn-sm btn-primary">Add Student</button>
 			
 			<button href="#" class="enrollMultiple promptenrollMultiple pull-right btn btn-sm btn-primary" style="margin-right:20px;">Enroll</button>&nbsp;
 			
@@ -172,7 +172,7 @@
 
 
 <!-- Add student -->
-<div class="modal fade" id="addChildModal" role="dialog">
+<div class="modal" id="addChildModal" tabindex="-1" role="dialog" aria-labelledby="addChildModal" aria-hidden="true">
 
 		<div class="modal-dialog" style="">
 		<div class="modal-content">
@@ -185,25 +185,25 @@
 					<div class="row">
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="text" id="" name="student_fname" class="studentFirstName form-control" placeholder="First name">
+						<input type="text" id="student_fname" name="student_fname" class="studentFirstName form-control" placeholder="First name">
 					</div>
 					</div>
 					
 					
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="text" name="student_lname" id="" class="studentLastName form-control" placeholder="Last name">
+						<input type="text" name="student_lname" id="student_lname" class="studentLastName form-control" placeholder="Last name">
 					</div>
 					</div>
 					</div>
 					
 					<div class="form-group">
-						<input type="text" id="" name="dob" class="datepicker studentDoB form-control" placeholder="Date of Birth">
+						<input type="text" id="dob" name="dob" class="datepicker studentDoB form-control" placeholder="Date of Birth">
 					</div>
 					
 					<div class="form-group">
 					<label class="label" for="student_photo"> Student Image</label>
-						<input type="file" id="" name="ppic" class="fileUpload studentImages form-control">
+						<input type="file" id="ppic" name="ppic" class="fileUpload studentImages form-control">
 					</div>
 					
 					<!-- user name and password -->
@@ -211,7 +211,7 @@
 					
 					<div class="form-group">
 					
-						<input type="text" id="" name="username" class="studentUsername form-control" placeholder="Username">
+						<input type="text" id="username" name="username" class="studentUsername form-control" placeholder="Username">
 					</div>
 					
 					
@@ -219,13 +219,13 @@
 					<div class="row">
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="password" id="" name="passwordo" class="studentPassword form-control" placeholder="Password">
+						<input type="password" id="passwordo" name="passwordo" class="studentPassword form-control" placeholder="Password">
 					</div>
 					</div>
 					
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="password" id="" name="password" class="studentPassword2 form-control" placeholder="Confirm password">
+						<input type="password" id="password" name="password" class="studentPassword2 form-control" placeholder="Confirm password">
 					</div>
 					</div>
 					</div>
@@ -255,7 +255,7 @@
 	</div>	
 	
 <!-- view edit student -->
-<div class="modal fade" id="editStudent" role="dialog">
+<div class="modal" id="editStudent" role="dialog">
 
 		<div class="modal-dialog" style="">
 		<div class="modal-content">
@@ -271,20 +271,20 @@
               <div class="row">
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="text" id="" name="f_name" class="studentFirstName form-control" placeholder="First name">
+						<input type="text" id="f_name" name="f_name" class="studentFirstName form-control" placeholder="First name">
 					</div>
 					</div>
 					
 					
 					<div class="col-md-6">
 					<div class="form-group">
-						<input type="text" name="l_name" id="" class="studentLastName form-control" placeholder="Last name">
+						<input type="text" name="l_name" id="l_name" class="studentLastName form-control" placeholder="Last name">
 					</div>
 					</div>
 					</div>
 					
 					<div class="form-group">
-						<input type="text" id="" name="dob" class="datepicker studentDoB form-control" placeholder="Date of Birth">
+						<input type="text" id="dob2" name="dob" class="datepicker studentDoB form-control" placeholder="Date of Birth">
 					</div>
 					
 				
@@ -293,7 +293,7 @@
 					
 					<div class="form-group">
 					
-						<input type="text" id="" name="username" class="studentUsername form-control" placeholder="Username">
+						<input type="text" id="username2" name="username" class="studentUsername form-control" placeholder="Username">
 					</div>
 					
 					<div class="row">
@@ -361,9 +361,9 @@
 	
 	
 	<!-- Multiple Enroll-->
-	<div class="modal fade" id="enrollMultiple" role="dialog">
+	<div class="modal" id="enrollMultiple" role="dialog">
 
-		<div class="modal-dialog" style="">
+		<div class="modal-dialog">
 		<div class="modal-content">
       <div class="modal-header">
     	<h4 class="pull-left">Enroll Student</h4>
@@ -405,7 +405,7 @@
 	</div>	
 	
 		<!-- Remove Student -->
-<div class="modal fade" id="deleteStudent" role="dialog">
+<div class="modal" id="deleteStudent" role="dialog">
 		<div class="modal-dialog">
 		<div class="modal-content">
       <div class="modal-header">
@@ -431,7 +431,7 @@
 	</div>	
 	
 			<!-- Unenroll Student -->
-<div class="modal fade" id="unenrollStudentModal" role="dialog">
+<div class="modal" id="unenrollStudentModal" role="dialog">
 		<div class="modal-dialog">
 		<div class="modal-content">
       <div class="modal-header">
@@ -459,7 +459,7 @@
 	
 	<!--  Account Settings -->
 	
-	<div class="modal fade" id="accountSettings" role="dialog">
+	<div class="modal" id="accountSettings" role="dialog">
 
 		<div class="modal-dialog" style="">
 		<div class="modal-content">
@@ -546,7 +546,7 @@
 	
 	
 				<!-- Subscribe Student -->
-<div class="modal fade" id="subscribeStudentModal" role="dialog">
+<div class="modal" id="subscribeStudentModal" role="dialog">
 		<div class="modal-dialog" style="width:60%;">
 		<div class="modal-content">
       <div class="modal-header">
