@@ -39,7 +39,7 @@ session_start();
 
 
 <!-- Modal -->
-<div id="popStudy" class="modal fade" role="dialog" style="padding-right:0px !important;">
+<div id="popStudy" class="modal" role="dialog" style="padding-right:0px !important;">
   <div class="modal-dialogs" style="width:100%; height:100vh; padding:0px; margin:0px;">
 
     <!-- Modal content-->
