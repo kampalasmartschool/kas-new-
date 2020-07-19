@@ -178,7 +178,7 @@
 
 	<!-- Class Preview -->
 
-<div class="modal fade" id="classPreview" role="dialog">
+<div class="modal" id="classPreview" role="dialog">
 <div class="modal-dialog" style="width:87%;">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -235,7 +235,7 @@
 </div>
 </div>
 <!-- send message modal -->
-<div class="modal fade" id="sendMessageModal" role="dialog">
+<div class="modal" id="sendMessageModal" role="dialog">
 
 <div class="modal-dialog" style="">
 	<div class="modal-content">
@@ -272,7 +272,7 @@
 </div>
 
 <!-- Login and Sign up page <div class="" id="accountPop" role="dialog">-->
-<div class="modal fade" id="accountPop" role="dialog">
+<div class="modal" id="accountPop" role="dialog">
 
 <div class="modal-dialog" style="width:80%; height: 100% !important">
 	<div class="modal-content">
@@ -426,7 +426,7 @@
 
 
 <!-- help Modal -->
-<div class="modal fade" id="helpModal" role="dialog">
+<div class="modal" id="helpModal" role="dialog">
 
 <div class="modal-dialog" style="width:87%;">
 	<div class="modal-content">
@@ -530,8 +530,9 @@
 		</div>
 	</div>
 </div>
-</div <!-- Confirm Subscription Student -->
-<div class="modal fade" id="ConfrimsubscribeStudentModal" role="dialog">
+</div 
+<!-- Confirm Subscription Student -->
+<div class="modal" id="ConfrimsubscribeStudentModal" role="dialog">
 <div class="modal-dialog" style="">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -559,7 +560,7 @@
 
 
 <!-- Reciept payment -->
-<div class="modal fade" id="recieptPaymentModal" role="dialog">
+<div class="modal" id="recieptPaymentModal" role="dialog">
 <div class="modal-dialog" style="">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -585,7 +586,7 @@
 </div>
 
 <!-- Download Module -->
-<div class="modal fade" id="downloadModal" role="dialog">
+<div class="modal" id="downloadModal" role="dialog">
 <div class="modal-dialog" style="">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -635,7 +636,7 @@
 
 
 <!-- Programs Module -->
-<div class="modal fade" id="programsModal" role="dialog">
+<div class="modal" id="programsModal" role="dialog">
 <div class="modal-dialog" style="width:80%">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -678,7 +679,7 @@
 
 <!-- Programs register -->
 <!-- Login and Sign up page <div class="" id="accountPop" role="dialog">-->
-<div class="modal fade" id="programsRegister" role="dialog">
+<div class="modal" id="programsRegister" role="dialog">
 
 <div class="modal-dialog" style="width:50%;">
 	<div class="modal-content">
