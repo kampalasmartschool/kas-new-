@@ -14,13 +14,14 @@
 </head>
 <body>
 <?php 
+    require './sendgrid-php/vendor/autoload.php';
 //  include("api/config.php");
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    echo "working";
 //   
 if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['name']) && isset($_POST['loc'])){
-    
+
     $class =  $_POST['class'];
     $curri =  $_POST['curri'];
     $name = $_POST['name'];
@@ -51,7 +52,42 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $email = test_input($email);
     $loc = test_input($loc);
     $phone = test_input($phone);
+    // require 'vendor/autoload.php'; // If you're using Composer (recommended)
+    // Comment out the above line if not using Composer
+    // require("<PATH TO>/sendgrid-php.php");
+    // If not using Composer, uncomment the above line and
+    // download sendgrid-php.zip from the latest release here,
+    // replacing <PATH TO> with the path to the sendgrid-php.php file,
+    // which is included in the download:
+    // https://github.com/sendgrid/sendgrid-php/releases
 
+    $subject="Need a tutor FOR specific class";
+    /*initialize the message that is to be sent to the specified email above*/
+    $message = "<h2> Need A Tutor </h2>";
+    $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
+    $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
+
+
+    $SGemail = new \SendGrid\Mail\Mail();
+    $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
+    $SGemail->setSubject($subject);
+    $SGemail->addTo("aleemahmada107@gmail.com", "Admin at kampalasmartschool");
+    // $email->addTo("admin@kampalasmartschool.com", "Admin at kampalasmartschool");
+    // $email->addTo("kampalasmartschool@gmail.com", "Admin at kampalasmartschool");
+    $SGemail->addContent(
+        "text/html", $message
+    );
+    $sendgrid = new \SendGrid('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');
+    try {
+        $response = $sendgrid->send($SGemail);
+        // print $response->statusCode() . "\n";
+        // print_r($response->headers());
+        // print $response->body() . "\n";
+        echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    } catch (Exception $e) {
+        // echo 'Caught exception: '. $e->getMessage() ."\n";
+        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    }
 
 
     //  db connection
@@ -77,28 +113,28 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
 
     // $stmt->close();
     // $conn->close();
-    $to='kampalasmartschool@gmail.com,admin@kampalasmartschool.com';
+    // $to='kampalasmartschool@gmail.com,admin@kampalasmartschool.com';
     
 
-    /*initialize the message that is to be sent to the specified email above*/
-    $message = "<h2> Need A Tutor </h2>";
-    $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
-    $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
+    // /*initialize the message that is to be sent to the specified email above*/
+    // $message = "<h2> Need A Tutor </h2>";
+    // $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
+    // $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
 
-    $subject="Need a tutor FOR specific class";
-    /*set up the email headers*/
-    $headers = '';
-    $headers .= 'From: ' . $name." ".$email."\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    // $subject="Need a tutor FOR specific class";
+    // /*set up the email headers*/
+    // $headers = '';
+    // $headers .= 'From: ' . $name." ".$email."\r\n";
+    // $headers .= "MIME-Version: 1.0\r\n";
+    // $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     
-    /*send the message and check if its been sent and respond accordingly*/
-    if (mail($to, $subject, $message, $headers)){
-    echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
-    } 
-    else{
-    echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
-    }
+    // /*send the message and check if its been sent and respond accordingly*/
+    // if (mail($to, $subject, $message, $headers)) {
+    // echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    // } 
+    // else{
+    // echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    // }
 
 // }
 }
