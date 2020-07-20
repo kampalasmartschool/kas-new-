@@ -77,7 +77,8 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
 
     // $stmt->close();
     // $conn->close();
-    $to='kampalasmartschool@gmail.com,admin@kampalasmartschool.com';
+//     $to='kampalasmartschool@gmail.com,admin@kampalasmartschool.com';
+    $to='aleemahmada107@gmail.com';
     
 
     /*initialize the message that is to be sent to the specified email above*/
