@@ -19,7 +19,8 @@
 		}
 
 		public function addRecipient($name,$email){
-			array_push($this->recipients, array("email"=> $email, "name" => $name));
+// 			array_push($this->recipients, array("email"=> $email, "name" => $name));
+			array_push($this->recipients, $email);
 		}
 
 		public function setTemplate($template){
