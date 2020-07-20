@@ -60,9 +60,7 @@
 // 				$mail->SMTPSecure = 'tls';
 // 				$mail->SMTPAuth = true;
 // // 				$mail->Username = $this->credentials['username'];
-// 				$mail->Username = "aleemahmada107@gmail.com";
 // // 				$mail->Password = $this->credentials['password'];
-// 				$mail->Password = "gmailIncorrect";
 // 				$mail->setFrom($this->sender['email'], $this->sender['name']);
 
 // 				foreach ($this->recipients as $recipient){
