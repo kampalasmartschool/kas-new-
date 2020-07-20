@@ -45,7 +45,7 @@
 				date_default_timezone_set('Etc/UTC');
 				$mail = new PHPMailer;
 				$mail->isSMTP();
-				$mail->SMTPDebug = 0;
+				$mail->SMTPDebug = 3;
 				$mail->Debugoutput = 'html';
 				$mail->Host = 'smtp.gmail.com';
 				$mail->Port = 25; 
@@ -58,8 +58,10 @@
 					);
 				$mail->SMTPSecure = 'tls';
 				$mail->SMTPAuth = true;
-				$mail->Username = $this->credentials['username'];
-				$mail->Password = $this->credentials['password'];
+// 				$mail->Username = $this->credentials['username'];
+				$mail->Username = "aleemahmada107@gmail.com";
+// 				$mail->Password = $this->credentials['password'];
+				$mail->Password = "gmailIncorrect";
 				$mail->setFrom($this->sender['email'], $this->sender['name']);
 
 				foreach ($this->recipients as $recipient){
