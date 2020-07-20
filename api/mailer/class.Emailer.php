@@ -19,7 +19,7 @@
 		}
 
 		public function addRecipient($name,$email){
-			array_push($this->recipients, $email);
+			array_push($this->recipients, array("email"=> $email, "name" => $name));
 		}
 
 		public function setTemplate($template){
@@ -31,21 +31,22 @@
 		}
 
 		public function send($subject){
-			$header = "From: Kampala Smart School <noreply@kampalasmartschool.com> \r\n";
-			$header .="Reply-To: Mugarura Emmanuel <admin@kampalasmartschool.com>";
-         	$header .= "MIME-Version: 1.0\r\n";
-         	$header .= "Content-type: text/html\r\n";
-         	//var_dump($this->recipients);
-         	$to=implode(",",$this->recipients);
+			// $header = "From: Kampala Smart School <noreply@kampalasmartschool.com> \r\n";
+			// $header .="Reply-To: Mugarura Emmanuel <admin@kampalasmartschool.com>";
+         	// $header .= "MIME-Version: 1.0\r\n";
+         	// $header .= "Content-type: text/html\r\n";
+         	// //var_dump($this->recipients);
+         	// $to=implode(",",$this->recipients);
 
-			mail ($to,$subject,$this->template,$header);
-			$this->recipients=[];
-			/*date_default_timezone_set('Etc/UTC');
+			// mail ($to,$subject,$this->template,$header);
+			// $this->recipients=[];
+
+			date_default_timezone_set('Etc/UTC');
 			$mail = new PHPMailer;
-			//$mail->isSMTP();
+			$mail->isSMTP();
 			$mail->SMTPDebug = 3;
 			$mail->Debugoutput = 'html';
-			$mail->Host = 'mail.kampalasmartschool.com';
+			$mail->Host = 'smtp.gmail.com';
 			$mail->Port = 25; 
 			$mail->SMTPOptions = array(
 			    'ssl' => array(
@@ -58,8 +59,6 @@
 			$mail->SMTPAuth = true;
 			$mail->Username = $this->credentials['username'];
 			$mail->Password = $this->credentials['password'];
-			echo $mail->Username;
-			echo $mail->Password;
 			$mail->setFrom($this->sender['email'], $this->sender['name']);
 
 			foreach ($this->recipients as $recipient){
@@ -71,7 +70,7 @@
 			$mail->AltBody = $this->txt_body;
 			set_time_limit(300);
 			$mail->send();
-			$this->recipients=array();*/
+			$this->recipients=array();
 		}
 	}
 ?>
