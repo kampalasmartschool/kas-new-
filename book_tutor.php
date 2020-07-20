@@ -80,12 +80,12 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $sendgrid = new \SendGrid('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');
     try {
         $response = $sendgrid->send($SGemail);
-        // print $response->statusCode() . "\n";
-        // print_r($response->headers());
-        // print $response->body() . "\n";
+        print $response->statusCode() . "\n";
+        print_r($response->headers());
+        print $response->body() . "\n";
         echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
     } catch (Exception $e) {
-        // echo 'Caught exception: '. $e->getMessage() ."\n";
+        echo 'Caught exception: '. $e->getMessage() ."\n";
         echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
     }
 
