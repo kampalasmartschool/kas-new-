@@ -155,15 +155,17 @@
 					$emailer->addRecipient("Kampala Smart School","usmansafdaru107@gmail.com");
 
 					
-					$emailer->send("New Registration notification");
-
-					echo json_encode(array('status'=>'success','message'=>'Please login to continue'));
+					if($emailer->send("New Registration notification") ) {
+						echo json_encode(array('status'=>'success','message'=>'Please login to continue', 'mail'=> "Sent"));
+					} else {
+						echo json_encode(array('status'=>'success','message'=>'Please login to continue', 'mail'=> "Not Sent"));
+					}
 					exit();
 				}
 			}
 			else
 			{
-				echo json_encode(array('status'=>'failed','message'=>'Some errors occured','errors'=>$errors));
+				echo json_encode(array('status'=>'failed','message'=>'Some errors occurred','errors'=>$errors));
 				exit();
 			}
 		}
