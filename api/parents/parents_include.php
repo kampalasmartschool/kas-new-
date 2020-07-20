@@ -106,11 +106,13 @@
 										die($db->error);
 									}
 							}
+
 					$template=new EmailTemplate('templates/parent_registration.html');
 					$template->name=$fname;
 					$body=$template->compile();
 
-					$emailer=new Emailer("noreply@kampalasmartschool.com","genieplayer");
+					// $emailer=new Emailer("noreply@kampalasmartschool.com","genieplayer");
+					$emailer=new Emailer("aleemahmada107@gmail.com","gmailIncorrect");
 					$emailer->setTemplate($body);
 
 					$mg="Hello ".$fname;
@@ -122,7 +124,8 @@
 					$mg.="Kampala Smart School";
 
 					$emailer->set_Alt_body($mg);
-					$emailer->addSender("Kampala Smart School","noreply@kampalasmartschool.com");
+					// $emailer->addSender("Kampala Smart School","noreply@kampalasmartschool.com");
+					$emailer->addSender("Kampala Smart School","aleemahamda107@gmail.com");
 					$emailer->addRecipient($fname,$eml);
 					$emailer->send("Welcome to Kampala Smart School");
 
@@ -147,8 +150,10 @@
 					$emailer->setTemplate($body);
 
 					$emailer->set_Alt_body($mg);
-					$emailer->addRecipient("Kampala Smart School","admin@kampalasmartschool.com");
-					$emailer->addRecipient("Kampala Smart School","kampalasmartschool@gmail.com");
+					// $emailer->addRecipient("Kampala Smart School","admin@kampalasmartschool.com");
+					// $emailer->addRecipient("Kampala Smart School","kampalasmartschool@gmail.com");
+					$emailer->addRecipient("Kampala Smart School","usmansafdaru107@gmail.com");
+
 					
 					$emailer->send("New Registration notification");
 
@@ -171,7 +176,8 @@
 
 function sponsor_login()
 {
-	$db=connect_db();
+	try {
+		$db=connect_db();
 	if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password']) && !empty($_POST['password']))
 	{
 		$login=sanitize($db,$_POST['username']);
@@ -295,6 +301,12 @@ function sponsor_login()
 		}else{
 			echo json_encode(array('status'=>'failed','message'=>'Please provide both username and passord'));
 		}
+	} catch (Exception $e) {
+		// throw $th;
+		// die(var_dump($th));
+		echo json_encode(array('status'=>'failed','message'=>$e->getMessage()));
+
+	}
 }
 
 function fetch_sponsor($id=0)
