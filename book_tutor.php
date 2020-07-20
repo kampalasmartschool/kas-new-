@@ -15,6 +15,7 @@
 <body>
 <?php 
 try{
+	echo "Here";
     require './sendgrid-php/vendor/autoload.php';
 	
 //  include("api/config.php");
@@ -31,14 +32,14 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $loc = $_POST['loc'];
     $phone = $_POST['phone'];
     
-    // echo $class;
-    // echo "<br/>";
-    // echo $curri;
-    // echo "<br/>";
-    // echo $name;
-    // echo $email;
-    // echo $loc;
-    // echo $phone; 
+    echo $class;
+    echo "<br/>";
+    echo $curri;
+    echo "<br/>";
+    echo $name;
+    echo $email;
+    echo $loc;
+    echo $phone; 
     
     // scripting checking
     function test_input($data) {
