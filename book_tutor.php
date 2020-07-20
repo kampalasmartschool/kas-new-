@@ -14,8 +14,9 @@
 </head>
 <body>
 <?php 
-try {
+try{
     require './sendgrid-php/vendor/autoload.php';
+	
 //  include("api/config.php");
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -79,7 +80,7 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
         "text/html", $message
     );
     $sendgrid = new \SendGrid('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');
-   
+   try {
         $response = $sendgrid->send($SGemail);
         print $response->statusCode() . "\n";
         print_r($response->headers());
@@ -138,6 +139,9 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     // }
 
 // }
+}
+} catch(Exception $e) {
+	echo "Message".$e->getMessage();
 }
 ?>
 
