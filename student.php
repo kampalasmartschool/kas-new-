@@ -12,7 +12,7 @@ session_start();
 	}
 ?>
 <?php  include("inc/header.php");  ?>
-	<div class="main" style="margin-top: 20rem">
+	<div class="main" style="margin-top: 7rem">
 		<div class="col-md-3 col-sm-3 leftPanel full-height">
 			<div class="artBg">
 				<div class="title-bar-dark"><p><i class="fa fa-graduation-cap"> </i> Classes</p></div>
@@ -51,7 +51,7 @@ session_start();
 			<div class="title-bar-dark">
 				<p>
 					
-					<button  data-dismiss="modal" class="btn btn-default btn-xs closePopUp"><span data-dismiss="modal" class="closePopUp fa fa-angle-left" style="cursor:pointer;"></span> Back to Subjects</button>
+					<button  data-dismiss="modal" class="btn btn-light btn-xs closePopUp"><span data-dismiss="modal" class="closePopUp fa fa-angle-left" style="cursor:pointer;"></span> Back to Subjects</button>
 					&nbsp; &nbsp; &nbsp; &nbsp;
 					<br>
 					<i class="fa fa-flask"> </i>
@@ -131,7 +131,7 @@ session_start();
 
 </script>
 
-<div style="margin-top: 100rem !important">
+<div style="margin-top: 0rem !important">
 </div>
 <?php  include("inc/footer.php");?>
 <script src="js/student.js"></script>
