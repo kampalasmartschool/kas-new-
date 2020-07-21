@@ -15,7 +15,7 @@
 <body>
 <?php 
 try{
-	echo "Here";
+// 	echo "Here";
     require './sendgrid-php/vendor/autoload.php';
 	
 //  include("api/config.php");
@@ -32,14 +32,14 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $loc = $_POST['loc'];
     $phone = $_POST['phone'];
     
-    echo $class;
-    echo "<br/>";
-    echo $curri;
-    echo "<br/>";
-    echo $name;
-    echo $email;
-    echo $loc;
-    echo $phone; 
+//     echo $class;
+//     echo "<br/>";
+//     echo $curri;
+//     echo "<br/>";
+//     echo $name;
+//     echo $email;
+//     echo $loc;
+//     echo $phone; 
     
     // scripting checking
     function test_input($data) {
@@ -69,7 +69,7 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $message = "<h2> Need A Tutor </h2>";
     $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
     $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
-echo "Till Here";
+// echo "Till Here";
 try {
     $SGemail = new \SendGrid\Mail\Mail();
     $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
