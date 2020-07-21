@@ -141,9 +141,10 @@ try {
 
 // }
 }
-} catch(Exception $e) {
-	echo "Message".$e->getMessage();
-}
+} catch (Exception $e) {
+        echo 'Caught exception: '. $e->getMessage() ."\n";
+        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    }
 ?>
 
 <!-- <a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a> -->
