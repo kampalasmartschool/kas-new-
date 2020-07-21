@@ -212,7 +212,7 @@ function edit_slide($id)
 
 function fetch_slides($id='',$lesson='')
 {
-	if(check_admin() || check_sponsor()){
+	if(check_admin() || check_sponsor() || check_student()){
 		$db=connect_db();
 		$sql='';
 		if(!empty($id))
