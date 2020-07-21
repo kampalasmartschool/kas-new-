@@ -34,7 +34,7 @@
 	}
 	function getAllMembers(){
 		$conn=connect_db();
-		$sql = "SELECT * FROM program_reg";
+		$sql = "SELECT * FROM sponsors";
 		$result = mysqli_query($conn, $sql);
 		if (!$result) {
 			
