@@ -76,7 +76,7 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
         // print $response->body() . "\n";
         echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
     } catch (Exception $e) {
-        // echo 'Caught exception: '. $e->getMessage() ."\n";
+        echo 'Caught exception: '. $e->getMessage() ."\n";
         echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
     }
 
