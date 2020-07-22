@@ -58,7 +58,7 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
     $message = "<h2> Tutor Request </h2>";
     $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number: ".$phone."</p> ";
     $message .= "<p> qualification: " . $qualifi . "</p><p>Subject: ". $subject . "</p><p>Location: ". $loc . "</p></h4>";
-
+ try {
     $SGemail = new \SendGrid\Mail\Mail();
     $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
     $SGemail->setSubject($subject);
@@ -69,7 +69,7 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
         "text/html", $message
     );
     $sendgrid = new \SendGrid('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');
-    try {
+   
         $response = $sendgrid->send($SGemail);
         // print $response->statusCode() . "\n";
         // print_r($response->headers());
