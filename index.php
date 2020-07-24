@@ -676,12 +676,12 @@ in the process.</p>
     					<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" name="fname" class="form-control" placeholder="Your Name">
+									<input type="text" name="fname" class="form-control" placeholder="Your Name" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" name="email" placeholder="Email">
+								<input type="text" class="form-control" name="email" placeholder="Email" required>
 							</div>
 							</div>
 							<div class="col-md-12">
@@ -691,7 +691,7 @@ in the process.</p>
 							</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="msg" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+								<textarea name="msg" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
 							</div>
 						</div>
 						<div class="col-md-12">
