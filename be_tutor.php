@@ -15,8 +15,8 @@
 
 <body>
 <?php
-    require './sendgrid-php/vendor/autoload.php';
-// require("api/config.php");
+    // require './sendgrid-php/vendor/autoload.php';
+require("api/config.php");
 
 
 // echo "working";
@@ -53,32 +53,65 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
     $loc = test_input($loc);
     $phone = test_input($phone);
 
-    $subject="Request from a Tutor for Kampala Smart School";
-   	/*initialize the message that is to be sent to the specified email above*/
-    $message = "<h2> Tutor Request </h2>";
-    $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number: ".$phone."</p> ";
-    $message .= "<p> qualification: " . $qualifi . "</p><p>Subject: ". $subject . "</p><p>Location: ". $loc . "</p></h4>";
- try {
-    $SGemail = new \SendGrid\Mail\Mail();
-    $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
-    $SGemail->setSubject($subject);
-    $SGemail->addTo("aleemahmada107@gmail.com", "Admin at kampalasmartschool");
-    // $email->addTo("admin@kampalasmartschool.com", "Admin at kampalasmartschool");
-    // $email->addTo("kampalasmartschool@gmail.com", "Admin at kampalasmartschool");
-    $SGemail->addContent(
-        "text/html", $message
-    );
-    $sendgrid = new \SendGrid('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');
-   
-        $response = $sendgrid->send($SGemail);
-        // print $response->statusCode() . "\n";
-        // print_r($response->headers());
-        // print $response->body() . "\n";
-        echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
-    } catch (Exception $e) {
-        echo 'Caught exception: '. $e->getMessage() ."\n";
-        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    // ------------------------------------------
+    //  db connection
+
+    $conn = connect_db();
+    if(!$conn){
+        echo '<div class="alert alert-success" role="alert" > Sorry There was a Problem while Sending Your Message Please try again <a href="index.php" class="btn btn-outline-danger btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    } else {
+        try {
+            $stmt = $conn->prepare("INSERT INTO `be_tutor`(`qualification`, `subject`, `email`, `name`, `location`, `phone`) VALUES (?,?,?,?,?,?)");
+            $stmt->bind_param("ssssss", $u_qualifi, $u_subject, $u_email, $u_name, $u_loc , $u_phone);
+        
+            // set parameters and execute
+            $u_qualifi = $qualifi;
+            $u_subject = $subject;
+            $u_email = $email;
+            $u_name = $name;
+            $u_loc = $loc;
+            $u_phone = $phone;
+        
+            $stmt->execute();
+
+            echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.' <a href="index.php" class="btn btn-outline-success btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+            
+            $stmt->close();
+            $conn->close();
+        } catch (Exception $e) {
+            echo '<div class="alert alert-success" role="alert" > Sorry There was a Problem while Sending Your Message Please try again <a href="index.php" class="btn btn-outline-danger btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+        }
     }
+   
+    // -------------------------------------------
+
+    // Previous Code Bellow
+    // $subject="Request from a Tutor for Kampala Smart School";
+   	// /*initialize the message that is to be sent to the specified email above*/
+    // $message = "<h2> Tutor Request </h2>";
+    // $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number: ".$phone."</p> ";
+    // $message .= "<p> qualification: " . $qualifi . "</p><p>Subject: ". $subject . "</p><p>Location: ". $loc . "</p></h4>";
+
+    // $SGemail = new \SendGrid\Mail\Mail();
+    // $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
+    // $SGemail->setSubject($subject);
+    // $SGemail->addTo("aleemahmada107@gmail.com", "Admin at kampalasmartschool");
+    // // $email->addTo("admin@kampalasmartschool.com", "Admin at kampalasmartschool");
+    // // $email->addTo("kampalasmartschool@gmail.com", "Admin at kampalasmartschool");
+    // $SGemail->addContent(
+    //     "text/html", $message
+    // );
+    // $sendgrid = new \SendGrid('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');
+    // try {
+    //     $response = $sendgrid->send($SGemail);
+    //     print $response->statusCode() . "\n";
+    //     print_r($response->headers());
+    //     print $response->body() . "\n";
+    //     // echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    // } catch (Exception $e) {
+    //     // echo 'Caught exception: '. $e->getMessage() ."\n";
+    //     echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    // }
 
 
 
@@ -132,6 +165,8 @@ if (isset($_POST['qualifi']) && isset($_POST['subject']) && isset($_POST['email'
     // $conn->close();
     
 // }
+} else {
+    header('location:index.php');
 }
 ?>
 
