@@ -14,11 +14,8 @@
 </head>
 <body>
 <?php 
-try{
-// 	echo "Here";
-    require './sendgrid-php/vendor/autoload.php';
-	
-//  include("api/config.php");
+    // require './sendgrid-php/vendor/autoload.php';
+    include("api/config.php");
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    echo "working";
@@ -32,16 +29,16 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $loc = $_POST['loc'];
     $phone = $_POST['phone'];
     
-//     echo $class;
-//     echo "<br/>";
-//     echo $curri;
-//     echo "<br/>";
-//     echo $name;
-//     echo $email;
-//     echo $loc;
-//     echo $phone; 
+    // echo $class;
+    // echo "<br/>";
+    // echo $curri;
+    // echo "<br/>";
+    // echo $name;
+    // echo $email;
+    // echo $loc;
+    // echo $phone; 
     
-    // scripting checking
+    // script checking
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -55,6 +52,70 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     $email = test_input($email);
     $loc = test_input($loc);
     $phone = test_input($phone);
+
+    //------------------------------------------------------------------ 
+    // 01: Store In Database
+    // $servername = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $dbname = "kampalas_kass_db";
+
+    // try {
+    //     // Create connection
+    //     $conn = mysqli_connect($servername, $username, $password, $dbname);
+    //     // Check connection
+    //     if (!$conn) {
+    //         die("Connection failed: " . mysqli_connect_error());
+    //     }
+
+    //     $sql = "INSERT INTO book_a_tutor_requests (class, Curriculum, name, email, phone, location)
+    //     VALUES ('John', 'Doe', 'john@example.com')";
+
+    //     if (mysqli_query($conn, $sql)) {
+    //     echo "New record created successfully";
+    //     } else {
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    //     }
+
+    //     mysqli_close($conn);
+    // } catch (Exception $e) {
+    //     echo $e->getMessage();
+    // }
+        
+    //------------------------------------------------------------------ 
+
+    // -------------- 02 ------------
+    //  db connection
+
+    $conn = connect_db();
+    if(!$conn){
+        echo '<div class="alert alert-success" role="alert" > Sorry There was a Problem while Sending Your Message Please try again <a href="index.php" class="btn btn-outline-danger btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    } else {
+       try {
+            $stmt = $conn->prepare("INSERT INTO `book_a_tutor_requests`(`class`, `Curriculum`, `email`, `name`, `location`, `phone`) VALUES (?,?,?,?,?,?)");
+            $stmt->bind_param("ssssss", $u_class, $u_curri, $u_email, $u_name, $u_loc , $u_phone);
+        
+            // set parameters and execute
+            $u_class = $class;
+            $u_curri = $curri;
+            $u_email = $email;
+            $u_name = $name;
+            $u_loc = $loc;
+            $u_phone = $phone;
+        
+            $stmt->execute();
+        
+            echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.' <a href="index.php" class="btn btn-outline-success btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+        
+            $stmt->close();
+            $conn->close();
+       } catch (Exception $e) {
+            echo '<div class="alert alert-success" role="alert" > Sorry There was a Problem while Sending Your Message Please try again <a href="index.php" class="btn btn-outline-danger btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+       }
+    }
+    
+    // ------------------------------
+
     // require 'vendor/autoload.php'; // If you're using Composer (recommended)
     // Comment out the above line if not using Composer
     // require("<PATH TO>/sendgrid-php.php");
@@ -64,36 +125,36 @@ if (isset($_POST['class']) && isset($_POST['curri']) && isset($_POST['email']) &
     // which is included in the download:
     // https://github.com/sendgrid/sendgrid-php/releases
 
-    $subject="Need a tutor FOR specific class";
-    /*initialize the message that is to be sent to the specified email above*/
-    $message = "<h2> Need A Tutor </h2>";
-    $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
-    $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
-// echo "Till Here";
-try {
-    $SGemail = new \SendGrid\Mail\Mail();
-    $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
-    $SGemail->setSubject($subject);
-    $SGemail->addTo("aleemahmada107@gmail.com", "Admin at kampalasmartschool");
-    // $email->addTo("admin@kampalasmartschool.com", "Admin at kampalasmartschool");
-    // $email->addTo("kampalasmartschool@gmail.com", "Admin at kampalasmartschool");
-    $SGemail->addContent(
-        "text/html", $message
-    );
-    $sendgrid = new \SendGrid('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');
-   
-        $response = $sendgrid->send($SGemail);
-        print $response->statusCode() . "\n";
-        print_r($response->headers());
-        print $response->body() . "\n";
-        echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
-    } catch (Exception $e) {
-        echo 'Caught exception: '. $e->getMessage() ."\n";
-        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
-    }
+    // $subject="Need a tutor FOR specific class";
+    // /*initialize the message that is to be sent to the specified email above*/
+    // $message = "<h2> Need A Tutor </h2>";
+    // $message .=  "<h4 style='padding:5px;'>Name: ".$name."</h4> \n <p>Email: ".$email."</p>  <p>Phone Number".$phone."</p> ";
+    // $message .= "<p> curriculam: " . $curri . "</p><p>Class: ". $class . "</p><p>Location: ". $loc . "</p></h4>";
 
 
-    //  db connection
+    // $SGemail = new \SendGrid\Mail\Mail();
+    // $SGemail->setFrom("aleemahmada107@gmail.com", "Kampala Smart School");
+    // $SGemail->setSubject($subject);
+    // $SGemail->addTo("aleemahmada107@gmail.com", "Admin at kampalasmartschool");
+    // // $email->addTo("admin@kampalasmartschool.com", "Admin at kampalasmartschool");
+    // // $email->addTo("kampalasmartschool@gmail.com", "Admin at kampalasmartschool");
+    // $SGemail->addContent(
+    //     "text/html", $message
+    // );
+    // $sendgrid = new \SendGrid('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');
+    // try {
+    //     $response = $sendgrid->send($SGemail);
+    //     print $response->statusCode() . "\n";
+    //     print_r($response->headers());
+    //     print $response->body() . "\n";
+    //     echo '<div class="alert alert-success" role="alert" > Thanks for contacting us. We will get back to you soon on your Email: ' .$email.'<a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a>';			
+    // } catch (Exception $e) {
+    //     // echo 'Caught exception: '. $e->getMessage() ."\n";
+    //     echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
+    // }
+
+
+    // //  db connection
 
     // $conn = connect_db();
     // if($db){
@@ -102,7 +163,7 @@ try {
     // $stmt = $conn->prepare("INSERT INTO `book_tutor`(`class`, `curri`, `email`, `name`, `loc`, `phone`) VALUES (?,?,?,?,?,?)");
     // $stmt->bind_param("ssssss", $u_class, $u_curri, $u_email, $u_name, $u_loc , $u_phone);
 
-    // set parameters and execute
+    // // set parameters and execute
     // $u_class = $class;
     // $u_curri = $curri;
     // $u_email = $email;
@@ -140,11 +201,10 @@ try {
     // }
 
 // }
+} else {
+    header('location:index.php');
+    // echo '<div class="alert alert-success text-center" role="alert" ><a href="index.php" class="btn btn-outline-danger btn-lg" role="button" aria-disabled="true"> Warning: Invalid Route Back to Home </a>';			
 }
-} catch (Exception $e) {
-        echo 'Caught exception: '. $e->getMessage() ."\n";
-        echo "Sorry There was a Problem while Sending Your Message Please try again<a href='./'>Back to Home</a>";	
-    }
 ?>
 
 <!-- <a href="index.php" class="btn btn-sucess btn-lg" role="button" aria-disabled="true"> Back to Home </a> -->
