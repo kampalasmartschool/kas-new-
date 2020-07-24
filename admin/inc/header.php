@@ -69,7 +69,7 @@
 			<a href="tutors.php" class="nav-side-links"><i class="fa fa-pencil-square-o"> </i> Tutors</a>
 		   </li> -->
 		   <li> 
-			<a href="#"  class="nav-side-links"></i> Messages</a>
+			<a href="messages.php" class="nav-side-links"></i> Messages</a>
 		   </li>
 		   <li> 
 			<a href="#" class="nav-side-links">Help</a>
