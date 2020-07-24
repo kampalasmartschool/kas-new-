@@ -1,5 +1,6 @@
 <?php
 //header("Content-Type: application/json; charset=UTF-8");
+
 	function add_program()
 	{
 		$conn = connect_db();
@@ -32,6 +33,7 @@
 		}
 	
 	}
+
 	function getAllMembers(){
 		$conn=connect_db();
 		$sql = "SELECT * FROM sponsors";
@@ -63,6 +65,103 @@
 			}
 		}
 	}
+
+	function bookTutorMessages(){
+		$conn=connect_db();
+		$sql = "SELECT * FROM book_a_tutor_requests";
+		$result = mysqli_query($conn, $sql);
+		if (!$result) {
+			
+			echo json_encode(array(
+				'status' => 'error',
+				'message' => mysqli_error($conn)
+			));
+			exit();
+		}
+		else{
+			
+			if ($result->num_rows > 0) {
+				
+				echo json_encode(array(
+					'status' => 'success',
+					'data' => $result->fetch_all(MYSQLI_ASSOC)
+				));
+				exit();
+			} else if ($result->num_rows <= 0) {
+				
+				echo json_encode(array(
+					'status' => 'failed',
+					'message' => 'Messages not Found.'
+				));
+				exit();
+			}
+		}
+	}
+
+	function beTutorMessages(){
+		$conn=connect_db();
+		$sql = "SELECT * FROM be_tutor";
+		$result = mysqli_query($conn, $sql);
+		if (!$result) {
+			
+			echo json_encode(array(
+				'status' => 'error',
+				'message' => mysqli_error($conn)
+			));
+			exit();
+		}
+		else{
+			
+			if ($result->num_rows > 0) {
+				
+				echo json_encode(array(
+					'status' => 'success',
+					'data' => $result->fetch_all(MYSQLI_ASSOC)
+				));
+				exit();
+			} else if ($result->num_rows <= 0) {
+				
+				echo json_encode(array(
+					'status' => 'failed',
+					'message' => 'Be Tutor Messages not Found.'
+				));
+				exit();
+			}
+		}
+	}
+
+	function messages(){
+		$conn=connect_db();
+		$sql = "SELECT * FROM message";
+		$result = mysqli_query($conn, $sql);
+		if (!$result) {
+			
+			echo json_encode(array(
+				'status' => 'error',
+				'message' => mysqli_error($conn)
+			));
+			exit();
+		}
+		else{
+			
+			if ($result->num_rows > 0) {
+				
+				echo json_encode(array(
+					'status' => 'success',
+					'data' => $result->fetch_all(MYSQLI_ASSOC)
+				));
+				exit();
+			} else if ($result->num_rows <= 0) {
+				
+				echo json_encode(array(
+					'status' => 'failed',
+					'message' => 'Messages not Found.'
+				));
+				exit();
+			}
+		}
+	}
+
 	function isescape($elem = '')
 	{
 		$conn = connect_db();
@@ -80,29 +179,30 @@
 			exit();
 		}
 	}
-	function exists($field = ''){
-	$conn = connect_db();
-	$sql = "SELECT id FROM program_reg WHERE email = '$field'";
-	$result = mysqli_query($conn, $sql);
-	if (!$result) {
 
-		echo json_encode(array(
-			'status' => 'error',
-			'message' => mysqli_error($conn)
-		));
-		exit();
-	}
-	else {
-
-		if ($result->num_rows > 0) {
+	function exists($field = '' ) {
+		$conn = connect_db();
+		$sql = "SELECT id FROM program_reg WHERE email = '$field'";
+		$result = mysqli_query($conn, $sql);
+		if (!$result) {
 
 			echo json_encode(array(
 				'status' => 'error',
-				'message' => $field.' is already regsitered, try using another email'
+				'message' => mysqli_error($conn)
 			));
 			exit();
 		}
+		else {
+
+			if ($result->num_rows > 0) {
+
+				echo json_encode(array(
+					'status' => 'error',
+					'message' => $field.' is already regsitered, try using another email'
+				));
+				exit();
+			}
+		}
 	}
-}
 
 ?>
