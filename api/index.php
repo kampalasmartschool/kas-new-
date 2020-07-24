@@ -30,6 +30,11 @@
 	$app->post("/programs/register","add_program");
 	$app->get("/programs/members","getAllMembers");
 
+	// Messages
+	$app->get("/programs/bookTutorMessages","bookTutorMessages");
+	$app->get("/programs/beTutorMessages","beTutorMessages");
+	$app->get("/programs/messages","messages");
+
 
 	//tutors
 	$app->post("/tutor","add_tutor");
