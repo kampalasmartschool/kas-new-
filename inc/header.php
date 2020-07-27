@@ -52,15 +52,15 @@
 </head>
 
 <body>
-<div id="errorNot" class="notification alert alert-danger">
+<div style="z-index: 2000000;" id="errorNot" class="notification alert alert-danger">
 	<i class="fa fa-close pull-right"></i>
 	<p class="text-danger text-center"></p>	
 </div>	
-<div id="successNot" class="notification alert alert-success">
+<div style="z-index: 2000000;" id="successNot" class="notification alert alert-success">
 <i class="fa fa-close pull-right"></i>
 <p class="text-success text-center"></p>	
 </div>
-	<div id="warnNot" class="notification alert alert-warning">
+	<div style="z-index: 2000000;" id="warnNot" class="notification alert alert-warning">
 	<i class="fa fa-close pull-right"></i>
 		<p class="text-warning text-center"></p>	
 	</div>	
