@@ -238,6 +238,7 @@ in the process.</p>
  -->
     <!-- slider -->
     <section class="home">
+        <img src="./images/kss_mockup.png" alt="" class="home-right-image">
 		<div class="slider" >
 			<div class="slide">
 				<div class="container">
@@ -294,9 +295,8 @@ in the process.</p>
 
 		<!-- controls  -->
 		<div class="controls">
-			<div class="prev">
-				&lt; </div> <div class="next"> &gt;
-			</div>
+			<div class="prev">&lt;</div>
+            <div class="next">&gt;</div>
 		</div>
 
 		<!-- indicators -->
