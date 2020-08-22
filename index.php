@@ -238,7 +238,7 @@ in the process.</p>
  -->
     <!-- slider -->
     <section class="home">
-        <img src="./images/kss_mockup.png" alt="" class="home-right-image">
+        <img src="./img/kss_mockup.png" alt="" class="home-right-image">
 		<div class="slider" >
 			<div class="slide">
 				<div class="container">
