@@ -49,13 +49,12 @@
 		else{
 			
 			if ($result->num_rows > 0) {
-							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
 
-// 				echo json_encode(array(
-// 					'status' => 'success',
-// 					'data' => $result->fetch_all(MYSQLI_ASSOC)
-// 				));
-// 				exit();
+				echo json_encode(array(
+					'status' => 'success',
+					'data' => $result->fetch_all(MYSQLI_ASSOC)
+				));
+				exit();
 			} else if ($result->num_rows <= 0) {
 				
 				echo json_encode(array(
@@ -146,12 +145,13 @@
 		else{
 			
 			if ($result->num_rows > 0) {
+							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
 				
-				echo json_encode(array(
-					'status' => 'success',
-					'data' => $result->fetch_all(MYSQLI_ASSOC)
-				));
-				exit();
+// 				echo json_encode(array(
+// 					'status' => 'success',
+// 					'data' => $result->fetch_all(MYSQLI_ASSOC)
+// 				));
+// 				exit();
 			} else if ($result->num_rows <= 0) {
 				
 				echo json_encode(array(
