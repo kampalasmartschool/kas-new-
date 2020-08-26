@@ -131,6 +131,8 @@ function getAllMessages() {
              "<td>"+value.phone+"</td><td>"+value.message+"</td></tr>";
             $('.message').append(tableData);
         });
+    }).error(function(d) {
+        console.log(d);
     })
 }
 
