@@ -128,7 +128,7 @@ function getAllMessages() {
             var tableData = "<tr><td>" + value.name
              + "</td><td>" 
              + value.email + "</td>" + 
-             "<td>"+value.phone+"</td></tr>";
+             "<td>"+value.phone+"</td><td>"+value.message+"</td></tr>";
             $('.message').append(tableData);
         });
     }).error(function(data, textStatus, jqXHR) {
