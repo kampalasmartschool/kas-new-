@@ -147,10 +147,10 @@
 			if ($result->num_rows > 0) {
 // 							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
 				
-				var_dump(json_encode(array(
+				echo json_encode(array(
 					'status' => 'success',
 					'data' => $result->fetch_all(MYSQLI_ASSOC)
-				)));
+				), JSON_INVALID_UTF8_IGNORE);
 // 				exit();
 			} else if ($result->num_rows <= 0) {
 				
