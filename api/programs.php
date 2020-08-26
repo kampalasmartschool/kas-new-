@@ -132,7 +132,7 @@
 
 	function messages(){
 		$conn=connect_db();
-		$sql = "SELECT * FROM message";
+		$sql = "SELECT name, email, phone FROM message";
 		$result = mysqli_query($conn, $sql);
 		if (!$result) {
 			
@@ -145,12 +145,12 @@
 		else{
 			
 			if ($result->num_rows > 0) {
-							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
+// 							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
 				
-// 				echo json_encode(array(
-// 					'status' => 'success',
-// 					'data' => $result->fetch_all(MYSQLI_ASSOC)
-// 				));
+				echo json_encode(array(
+					'status' => 'success',
+					'data' => $result->fetch_all(MYSQLI_ASSOC)
+				));
 // 				exit();
 			} else if ($result->num_rows <= 0) {
 				
