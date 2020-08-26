@@ -44,17 +44,18 @@
 				'status' => 'error',
 				'message' => mysqli_error($conn)
 			));
-			exit();
+// 			exit();
 		}
 		else{
 			
 			if ($result->num_rows > 0) {
-				
-				echo json_encode(array(
-					'status' => 'success',
-					'data' => $result->fetch_all(MYSQLI_ASSOC)
-				));
-				exit();
+							die(var_dump($result->fetch_all(MYSQLI_ASSOC)));
+
+// 				echo json_encode(array(
+// 					'status' => 'success',
+// 					'data' => $result->fetch_all(MYSQLI_ASSOC)
+// 				));
+// 				exit();
 			} else if ($result->num_rows <= 0) {
 				
 				echo json_encode(array(
