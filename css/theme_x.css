@@ -241,7 +241,7 @@ h6 {
 }
 
 #navLinks li {
-	margin-right: 20px;
+	margin-right: 10px;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -2334,4 +2334,18 @@ textarea {
 .programs a p{
 	color:rgba(0, 0, 0, .5) !important;
 	font-size: 16px;
+}
+
+.codingal-new-tag:after {
+    content: "New";
+    position: absolute;
+    margin-left: 21px;
+    margin-top: -43px;
+    color: white;
+    background: #bb3729;
+    border-radius: 5px;
+    padding: 0 4px;
+    font-size: 10px;
+    width: fit-content;
+    /* line-height: 1.5; */
 }
