@@ -406,7 +406,11 @@ in the process.</p>
         </div>
     	</div>
     </section>
-	
+	<section style="padding:30px 10px;">
+		<h2 style="text-align:center;font-size:35px;margin-bottom:30px;">Exciting coding courses for your child in partnership with Codingal</h2>
+		<div id="codingal-courses" data-brand-color="bb2e24" data-currency="UGX" data-cta-link="/kampala-smart-school/?utm_source=kss" data-courses="all" data-ethnicity="African"></div>
+		<script async="" defer="" crossorigin="anonymous" src="https://websdk.codingal.com/courses/main.min.js"></script>	
+	</section>
 	
 	<div class="site-section block-13" id="testimonials-section" style="background-color: #38b6ff;">
       <div class="container">
