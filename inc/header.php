@@ -139,8 +139,7 @@
 			
 		   <?php }else {?>
 			<li class="nav-item"><a class="nav-link" href="/#online-learning">Online Learning</a></li>
-			<li class="nav-item"><a class="nav-link" href="/#homeschooling">Homeschooling</a>				
-			</li>
+			<li class="nav-item"><a class="nav-link" href="/#homeschooling">Homeschooling</a></li>
 			<li class="nav-item"><a class="nav-link" href="/#contact-section">Smart Tutor</a></li>
 			<li class="nav-item codingal-new-tag"><a class="nav-link" href="/coding-courses.php">Coding course</a></li>
 			<li class="nav-item"><a class="nav-link" href="/#ftco-appointment">Contact</a></li>
